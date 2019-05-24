@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add Part</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="mb-5">New Part</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <!--
+            <form action="#" th:action="@{/add_part}" method="post">
+
+
+                <div class="form-group">
+                    <input type="text" class="form-control" id="title" th:name="title" placeholder="Enter part name:" maxlength="100" style="width: 400px"/>
+
+                </div>
+                <div class="form-group">
+                    <input type="number" value="1" min="0" class="form-control" id="quantity" th:name="quantity" style="width: 100px" />
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="required" th:name="required" />
+                        <label class="form-check-label" for="required">
+                            Is required?
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+              -->
+
+            <form action="#" th:action="@{/add_part}" th:object="${computerPart}" method="post">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="title" class="col-form-label">Title</label>
+                        <input type="text"  th:field="*{title}" class="form-control" id="title" placeholder="Part name..." >
+                        <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"class="text-danger" ></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity" class="col-form-label">Quantity</label>
+                        <input type="number" value="1" min="0" th:field="*{quantity}" class="form-control" id="quantity" placeholder="Quantity">
+                        <span th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" th:field="*{required}" class="form-check-input" id="required" placeholder="Is required?">
+                            <label for="required" class="form-check-label">Is required?</label>
+                        </div>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
