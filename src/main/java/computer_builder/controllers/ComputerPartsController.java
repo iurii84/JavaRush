@@ -12,11 +12,12 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
@@ -43,8 +44,7 @@ public class ComputerPartsController {
     }
 
     @GetMapping("/")
-    public String showAllParts(Model model, @PageableDefault(size = 10,
-                                                             sort = {"id"},
+    public String showAllParts(Model model, @PageableDefault(sort = {"id"},
                                                              direction = Sort.Direction.DESC) Pageable pageable) {
 
         int quantity = getQuantity();
@@ -74,14 +74,6 @@ public class ComputerPartsController {
     }
 
 
-//    @PostMapping("/add_part")
-//    public String addPart(@RequestParam String title,
-//                          @RequestParam int quantity,
-//                          @RequestParam(value = "required", required = false) boolean isRequired){
-//        repository.save(new ComputerPart(title, quantity, isRequired));
-//        return "redirect:/";
-//    }
-//
 
     @PostMapping("/add_part")
     public String addPart(@Valid ComputerPart computerPart,
