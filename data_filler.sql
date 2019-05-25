@@ -28,3 +28,5 @@ INSERT INTO `computer_parts` VALUES
 
 
 
+INSERT INTO `hibernate_sequence` VALUES
+(26);
