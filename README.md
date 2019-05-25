@@ -2,6 +2,9 @@
 Java Rush test app for Intership
 
 Stack: Spring Boot, Spring Data, Thymeleaf, Mockito, Junit, MySQL DB
+DB -    test
+login - root
+pass -  root
 
 Simple CRUD application, that represent Computer Parts Store.
 You can list your parts from DB, add parts and delete them.
