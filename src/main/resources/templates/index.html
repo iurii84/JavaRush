@@ -24,6 +24,7 @@
                         <th>
                             <form action="#" th:action="@{/search_part}" method="post">
                                 <div class="form-group" style="text-align:center">
+                                    <label for="search" class="col-form-label"></label>
                                     <input type="text"  id="search" th:name="search" placeholder="Part name:" maxlength="100" style="width: 300px; height: 38px; border-radius: 7px; "  />
                                     <button type="submit" class="btn btn-primary">Search</button>
                                     <button type="button" class="btn btn-primary" onclick='location.href="/back"'>Back</button>
@@ -108,7 +109,7 @@
 
 
 
-            <table class="pagination-sm" align="right" th:unless="${totalElements} == 0">
+            <table class="pagination-sm" style="position:absolute;right:0;" th:unless="${totalElements} == 0">
                 <tr>
 
                     <td><a  href="#" class="navbar-brand" th:href="@{'/?page={page}'(page=0)}" style="font-size:16px">&larr; First</a></td>
