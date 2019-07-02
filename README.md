@@ -1,7 +1,7 @@
 # JavaRush
 Java Rush test app for Intership
 
-Stack: Spring Boot, Spring Data, Thymeleaf, Mockito, Junit, MySQL DB
+Stack: Spring Boot, Spring Data, Thymeleaf, Mockito, Junit, MySQL
 
 DB -    test
 
